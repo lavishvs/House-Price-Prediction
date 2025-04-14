@@ -1,0 +1,55 @@
+# Python-specific ignores
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+*.venv
+env/
+venv/
+ENV/
+env.bak/
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.out
+*.pid
+*.swp
+*.swo
+*.bak
+*.orig
+
+# IDE-specific ignores
+.vscode/
+.idea/
+*.iml
+
+# OS-specific ignores
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Model and artifacts
+model/*.pickle
+model/*.h5
+model/*.json
+server/artifacts/
+
+# Environment files
+*.env
+*.ini
+*.cfg
+
+# Other
+*.sqlite3
+*.db

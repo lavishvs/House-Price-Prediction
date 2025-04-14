@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>House Price Predictor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+  <div class="bg-white shadow-lg rounded-2xl p-8 w-full max-w-xl">
+    <h1 class="text-2xl font-bold mb-6 text-center text-indigo-600">🏡 House Price Predictor</h1>
+
+    <div class="space-y-4">
+      <div>
+        <label for="sqft" class="block text-gray-700 font-medium">Total Sqft</label>
+        <input id="sqft" type="number" class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-indigo-400" placeholder="e.g., 1200" />
+      </div>
+
+      <div>
+        <label for="bhk" class="block text-gray-700 font-medium">BHK (Bedrooms)</label>
+        <input id="bhk" type="number" class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-indigo-400" placeholder="e.g., 3" />
+      </div>
+
+      <div>
+        <label for="bath" class="block text-gray-700 font-medium">Bathrooms</label>
+        <input id="bath" type="number" class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-indigo-400" placeholder="e.g., 2" />
+      </div>
+
+      <div>
+        <label for="location" class="block text-gray-700 font-medium">Location</label>
+        <select id="location" class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-indigo-400">
+          <option disabled selected>Loading...</option>
+        </select>
+      </div>
+
+      <button onclick="predictPrice()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg font-semibold">
+        Predict Price
+      </button>
+
+      <div id="result" class="text-center text-xl font-bold text-green-600 mt-4"></div>
+    </div>
+  </div>
+
+  <script>
+    async function loadLocations() {
+      try {
+        const res = await fetch("http://127.0.0.1:5000/get_location_names");
+        const data = await res.json();
+        const locationSelect = document.getElementById("location");
+        locationSelect.innerHTML = ""; // Clear previous options
+
+        data.locations.forEach(loc => {
+          const option = document.createElement("option");
+          option.value = loc;
+          option.innerText = loc;
+          locationSelect.appendChild(option);
+        });
+      } catch (err) {
+        alert("Error loading locations!");
+      }
+    }
+
+    async function predictPrice() {
+      const sqft = document.getElementById("sqft").value;
+      const bhk = document.getElementById("bhk").value;
+      const bath = document.getElementById("bath").value;
+      const location = document.getElementById("location").value;
+
+      if (!sqft || !bhk || !bath || !location) {
+        alert("Please fill all fields!");
+        return;
+      }
+
+      const response = await fetch("http://127.0.0.1:5000/predict_home_price", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          total_sqft: sqft,
+          bhk: bhk,
+          bath: bath,
+          location: location
+        })
+      });
+
+      const result = await response.json();
+      document.getElementById("result").innerText = `Estimated Price: ₹${result.estimated_price} Lakhs`;
+    }
+
+    window.onload = loadLocations;
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>
