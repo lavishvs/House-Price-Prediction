@@ -1,9 +1,7 @@
-<h1 align="center">🏠 House Price Prediction</h1>
+# 🏠 House Price Prediction
 
-<p align="center">
-  🎯 A machine learning project to predict house prices using Python, Scikit-learn, and more!<br>
-  📊 Empowering decisions with data-driven insights.
-</p>
+🎯 A machine learning project to predict house prices using Python, Scikit-learn, and more!  
+📊 Empowering decisions with data-driven insights.
 
 ---
 
@@ -16,8 +14,8 @@ This project reflects my passion for **data science**, **machine learning**, and
 
 ## 🔍 Problem Statement
 
-> Predict the **price of a house** based on features like location, size, number of bedrooms, etc.  
-> The goal is to build a **reliable regression model** that can assist buyers and sellers in the real estate market.
+Predict the **price of a house** based on features like location, size, number of bedrooms, etc.  
+The goal is to build a **reliable regression model** that can assist buyers and sellers in the real estate market.
 
 ---
 
@@ -34,13 +32,13 @@ This project reflects my passion for **data science**, **machine learning**, and
 
 ## 🧠 Machine Learning Workflow
 
-### 🧹 1. Data Preprocessing
+### 1. Data Preprocessing 🧹
 - Handled **missing values** and **outliers**
 - Used **label encoding** for categorical features
 - Feature scaling and transformation
 - Performed EDA using Matplotlib and Seaborn
 
-### 🤖 2. Model Building
+### 2. Model Building 🤖
 - Models used:
   - 📏 Linear Regression
   - 🧮 Lasso Regression
@@ -50,7 +48,7 @@ This project reflects my passion for **data science**, **machine learning**, and
   - 📈 R² Score
 - ✅ Hyperparameter tuning with Grid Search
 
-### 🚀 3. Model Deployment
+### 3. Model Deployment 🚀
 - Model serialized using `pickle`
 - Utility script (`util.py`) for model loading & prediction
 - Modular structure for easy scalability
@@ -61,11 +59,11 @@ This project reflects my passion for **data science**, **machine learning**, and
 
 | Category           | Tools & Libraries                          |
 |--------------------|--------------------------------------------|
-| Programming        | `Python` 🐍                                |
-| Data Analysis      | `Pandas`, `NumPy`, `Matplotlib`, `Seaborn` |
-| Machine Learning   | `Scikit-learn`, `Pickle` 🤖                 |
-| IDE                | `Jupyter Notebook`, `VS Code`              |
-| Version Control    | `Git`, `GitHub`                            |
+| Programming        | Python 🐍                                  |
+| Data Analysis      | Pandas, NumPy, Matplotlib, Seaborn         |
+| Machine Learning   | Scikit-learn, Pickle 🤖                     |
+| IDE                | Jupyter Notebook, VS Code                 |
+| Version Control    | Git, GitHub                               |
 
 ---
 
@@ -76,14 +74,15 @@ house_price_prediction/
 ├── model/
 │   ├── Real_sate_dataclining (1).ipynb    # Data cleaning & modeling notebook
 │   ├── banglore_home_prices_model.pickle  # Trained ML model
-│   ├── columns.json                        # Feature columns info
+│   ├── columns.json                       # Feature columns info
 ├── server/
-│   ├── util.py                             # Model loading & prediction utilities
-│   └── artifacts/                          # Folder with model artifacts
-├── .idea/                                  # IDE configurations
-├── .gitignore                              # Git ignore settings
-└── README.md                               # Project documentation
-🚀 How to Run This Project
+│   ├── util.py                            # Model loading & prediction utilities
+│   └── artifacts/                         # Folder with model artifacts
+├── .idea/                                 # IDE configurations
+├── .gitignore                             # Git ignore settings
+└── [README.md](http://_vscodecontentref_/1)                              # Project documentation
+
+## **🚀 How to Run This Project**
 Clone the repository:
 
 bash
@@ -131,5 +130,6 @@ Creators of Python, Scikit-learn, and all libraries used
 
 Anyone passionate about building with data! 💖
 
-<p align="center">✨ Made with 💻 and ❤️ by Lavish Verma ✨</p> ```
+✨ Made with 💻 and ❤️ by Lavish Verma ✨
+
 Let me know if you'd like to add a banner, GitHub badges, or a GIF demo to make it even more impressive!
