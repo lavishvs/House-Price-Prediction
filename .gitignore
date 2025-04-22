@@ -52,4 +52,5 @@ server/artifacts/
 
 # Other
 *.sqlite3
-*.db
+*.dbvenv/
+.env/
