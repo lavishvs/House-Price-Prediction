@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: house-price-api
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python server/app.py"
+    envVars:
+      - key: PORT
+        value: 10000
