@@ -29,6 +29,12 @@ The goal is to build a **reliable regression model** that can assist buyers and 
 - 🧠 Make real-time predictions from the trained model
 
 ---
+## 🔗 Live Demo
+
+Frontend (GitHub Pages): [House Price Predictor UI](https://lavishvs.github.io/House-Price-Prediction/)
+
+Backend (Render): [House Price Predictor API](https://house-price-prediction-vvb8.onrender.com/)
+
 
 ## 🧠 Machine Learning Workflow
 
